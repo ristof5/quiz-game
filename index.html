@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Time - Pahlawan Data</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/images/background.jpg" class="bg" alt="Background Pixel" />
+
+    <div class="overlay">
+      <div class="hearts">
+        <img src="assets/images/heart.png" alt="heart" />
+        <img src="assets/images/heart.png" alt="heart" />
+        <img src="assets/images/heart.png" alt="heart" />
+        <img src="assets/images/heart.png" alt="heart" />
+        <img src="assets/images/heart.png" alt="heart" />
+      </div>
+
+      <h1 class="title">QUIZ TIME</h1>
+
+      <div class="menu-buttons">
+        <button id="startBtn">START</button>
+        <button id="rulesBtn">RULES</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Rules -->
+  <div id="rulesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Aturan Permainan</h2>
+      <ul>
+        <li>Jawab 10 pertanyaan tentang keamanan digital anak</li>
+        <li>Kamu punya 5 nyawa ❤️</li>
+        <li>Salah satu = -1 nyawa</li>
+        <li>Jika nyawa habis, ulangi dari awal</li>
+        <li>Jawab semua dengan benar untuk dapatkan "Badge Pahlawan Data"</li>
+      </ul>
+      <p>Selamat bermain dan jaga privasi digitalmu!</p>
+    </div>
+  </div>
+
+  <script>
+    // Navigasi tombol
+    document.getElementById("startBtn").onclick = function () {
+      window.location.href = "game.html";
+    };
+
+    // Modal Rules
+    const modal = document.getElementById("rulesModal");
+    const rulesBtn = document.getElementById("rulesBtn");
+    const closeBtn = document.getElementById("closeModal");
+
+    rulesBtn.onclick = () => (modal.style.display = "block");
+    closeBtn.onclick = () => (modal.style.display = "none");
+    window.onclick = (e) => {
+      if (e.target == modal) modal.style.display = "none";
+    };
+  </script>
+</body>
+</html>

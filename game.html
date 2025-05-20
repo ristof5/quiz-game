@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Game - Start</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="assets/images/background.jpg" class="bg" alt="Pixel Background">
+
+    <!-- Progress Bar -->
+    <div id="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+
+    <div class="overlay">
+      <!-- Heart Lives -->
+      <div class="hearts" id="hearts">
+        <img src="assets/images/heart.png" alt="Heart">
+        <img src="assets/images/heart.png" alt="Heart">
+        <img src="assets/images/heart.png" alt="Heart">
+        <img src="assets/images/heart.png" alt="Heart">
+        <img src="assets/images/heart.png" alt="Heart">
+      </div>
+
+      <!-- Quiz Box -->
+      <div id="quiz-box">
+        <h2 id="question">Loading question...</h2>
+        <div id="options"></div>
+      </div>
+
+      <!-- Quit Button -->
+      <button onclick="quitGame()" class="btn quit-btn">Berhenti</button>
+    </div>
+  </div>
+
+  <!-- Audio Sound Effects -->
+  <audio id="correct-sound" src="assets/sounds/correct.mp3"></audio>
+  <audio id="wrong-sound" src="assets/sounds/wrong.mp3"></audio>
+  <audio id="win-sound" src="assets/sounds/win.mp3"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

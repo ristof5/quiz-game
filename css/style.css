@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #000;
+  overflow: hidden;
+}
+
+body, .container {
+  position: relative;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 10%;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.title {
+  font-size: 3rem;
+  color: yellow;
+  margin-bottom: 2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.menu-buttons {
+  margin-top: 2rem;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  background-color: #c0c0c0;
+  border: 4px solid #444;
+  box-shadow: 4px 4px #222;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #ffe600;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.hearts {
+  margin-bottom: 2rem;
+}
+
+.hearts img {
+  width: 100px;
+  margin: 0 3px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 6px solid #333;
+  width: 70%;
+  color: #000;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.modal-content h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content ul {
+  list-style-type: square;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 0.75rem;
+  color: #444;
+}
+
+.close {
+  color: #000;
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  button {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    font-size: 0.7rem;
+  }
+}
+
+.center {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.badge {
+  width: 120px;
+  margin: 20px;
+  animation: pop 0.8s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#progress-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 9999; /* penting */
+}
+
+#progress-fill {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+
+.quit-btn {
+  background: #ff4444;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 5px;
+}
