@@ -23,26 +23,6 @@ body, .container {
   width: 100%;
   height: 100vh;
 }
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-
-  #quiz-box h2 {
-    font-size: 1.2rem;
-  }
-
-  .option {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  #exit-btn {
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-}
-
 
 .bg {
   width: 100%;
@@ -75,9 +55,17 @@ body, .container {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .menu-buttons {
@@ -115,12 +103,19 @@ button:hover {
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
+  /* Lebih tinggi dari elemen lain */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
 }
 
 .modal-content {
@@ -132,6 +127,40 @@ button:hover {
   color: #000;
   font-size: 0.8rem;
   line-height: 1.5rem;
+}
+
+#exit-modal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 90%;
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+#game-over-modal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-content h2 {
@@ -150,6 +179,42 @@ button:hover {
   color: #444;
 }
 
+.modal-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Modal Buttons */
+.modal-content button {
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+#confirm-exit {
+  background-color: #d33;
+  color: white;
+}
+
+#cancel-exit {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-content button:hover {
+  opacity: 0.9;
+}
+
+.hidden {
+  display: none;
+}
+
 .close {
   color: #000;
   float: right;
@@ -161,7 +226,7 @@ button:hover {
   .title {
     font-size: 1.5rem;
   }
-  
+
   button {
     font-size: 0.7rem;
     padding: 0.5rem 1rem;
@@ -186,8 +251,15 @@ button:hover {
 }
 
 @keyframes pop {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 #progress-bar {
@@ -201,7 +273,8 @@ button:hover {
   border: 2px solid #fff;
   border-radius: 10px;
   overflow: hidden;
-  z-index: 9999; /* penting */
+  z-index: 9999;
+  /* penting */
 }
 
 #progress-fill {
@@ -220,4 +293,24 @@ button:hover {
   cursor: pointer;
   font-family: inherit;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  #quiz-box h2 {
+    font-size: 1.2rem;
+  }
+
+  .option {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #exit-btn {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
 }
