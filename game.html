@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Game - Start</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="container">
     <img src="assets/images/background.jpg" class="bg" alt="Pixel Background">
@@ -31,8 +33,35 @@
         <div id="options"></div>
       </div>
 
-      <!-- Quit Button -->
-      <button onclick="quitGame()" class="btn quit-btn">Berhenti</button>
+      <!-- Quit Button(modal quit) -->
+      <button onclick="quitGame()" id="exit-btn" class="btn quit-btn">Berhenti</button>
+      <div id="exit-modal" class="modal hidden">
+        <div class="modal-content">
+          <p>Yakin ingin keluar dari permainan?</p>
+          <button id="confirm-exit">Ya</button>
+          <button id="cancel-exit">Batal</button>
+        </div>
+      </div>
+
+
+      <!--modal naik level-->
+      <div id="levelUpModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <h2 id="levelUpTitle">Selamat!</h2>
+          <p id="levelUpMessage">Kamu naik ke level berikutnya.</p>
+          <button id="nextLevelBtn">Lanjut</button>
+        </div>
+      </div>
+      <!-- Game Over Modal -->
+      <!-- Modal Game Over -->
+      <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Game Over</h2>
+          <p>Kamu kehabisan nyawa.</p>
+          <button id="restart-game">Kembali ke Beranda</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -43,4 +72,5 @@
 
   <script src="js/script.js"></script>
 </body>
+
 </html>
