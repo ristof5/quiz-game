@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Time - Pahlawan Data</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <div class="container">
     <img src="assets/images/background.jpg" class="bg" alt="Background Pixel" />
@@ -43,12 +45,39 @@
       <p>Selamat bermain dan jaga privasi digitalmu!</p>
     </div>
   </div>
+  <!-- Tambahkan setelah modal rules(modal kategori) -->
+  <div id="categoryModal" class="modal">
+    <div class="modal-content">
+      <h2>Pilih Kategori</h2>
+      <form id="categoryForm">
+        <label>
+          <input type="radio" name="category" value="privasi" required />
+          Privasi Digital
+        </label><br />
+        <label>
+          <input type="radio" name="category" value="perundungan" />
+          Pencegahan Perundungan
+        </label><br /><br />
+        <button type="submit">Mulai Game</button>
+      </form>
+    </div>
+  </div>
 
   <script>
     // Navigasi tombol
+    // START BUTTON opens category modal
     document.getElementById("startBtn").onclick = function () {
+      document.getElementById("categoryModal").style.display = "block";
+    };
+
+    // FORM SUBMIT: pilih kategori → simpan → redirect
+    document.getElementById("categoryForm").onsubmit = function (e) {
+      e.preventDefault();
+      const selected = document.querySelector('input[name="category"]:checked').value;
+      localStorage.setItem("selectedCategory", selected);
       window.location.href = "game.html";
     };
+
 
     // Modal Rules
     const modal = document.getElementById("rulesModal");
@@ -62,4 +91,5 @@
     };
   </script>
 </body>
+
 </html>
