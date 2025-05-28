@@ -1,8 +1,10 @@
 let questions = [];
 let currentQuestion = 0;
 let lives = 5;
-let currentLevel = "mudah"; // start dari mudah
+let currentLevel = "mudah";
 let selectedCategory = localStorage.getItem("selectedCategory");
+
+const levels = ["mudah", "menengah", "sulit"];
 
 const questionEl = document.getElementById('question');
 const optionsEl = document.getElementById('options');
@@ -12,14 +14,27 @@ const correctSound = document.getElementById('correct-sound');
 const wrongSound = document.getElementById('wrong-sound');
 const winSound = document.getElementById('win-sound');
 
+const levelUpModal = document.getElementById('levelUpModal');
+const levelUpTitle = document.getElementById('levelUpTitle');
+const levelUpMessage = document.getElementById('levelUpMessage');
+const nextLevelBtn = document.getElementById('nextLevelBtn');
 
-// Fungsi untuk memuat soal dari JSON
+
+const gameOverModal = document.getElementById("game-over-modal");
+const restartGameBtn = document.getElementById("restart-game");
+
+nextLevelBtn.onclick = () => {
+    levelUpModal.style.display = "none";
+    currentQuestion = 0;
+    loadQuestion();
+};
+
 async function loadQuestionsFromJSON() {
     try {
         const response = await fetch('../public/data/questions.json');
         const data = await response.json();
-        // Optional: filter berdasarkan kategori atau tingkat
-        questions = data.filter(q => q.kategori === "privasi" && q.tingkat === "mudah");
+
+        questions = data.filter(q => q.kategori === selectedCategory && q.tingkat === currentLevel);
 
         if (questions.length === 0) {
             questionEl.textContent = "Soal tidak tersedia.";
@@ -27,7 +42,6 @@ async function loadQuestionsFromJSON() {
         }
 
         updateHearts();
-        loadQuestion(); // Panggil pertama kali setelah soal dimuat
     } catch (error) {
         console.error("Gagal memuat file JSON:", error);
         questionEl.textContent = "Gagal memuat soal.";
@@ -36,8 +50,16 @@ async function loadQuestionsFromJSON() {
 
 function loadQuestion() {
     if (currentQuestion >= questions.length) {
-        winSound.play();
-        window.location.href = "badge.html";
+        const nextIndex = levels.indexOf(currentLevel) + 1;
+        if (nextIndex < levels.length) {
+            currentLevel = levels[nextIndex];
+            lives = Math.min(lives + 1, 5); // Tambah 1 nyawa
+            showLevelUpModal(currentLevel); // Tampilkan pop-up
+            loadQuestionsFromJSON();
+        } else {
+            winSound.play();
+            window.location.href = "badge.html";
+        }
         return;
     }
 
@@ -47,7 +69,7 @@ function loadQuestion() {
     questionEl.textContent = q.pertanyaan;
     optionsEl.innerHTML = '';
 
-    q.opsi.forEach((opt, index) => {
+    q.opsi.forEach((opt) => {
         const btn = document.createElement('button');
         btn.textContent = opt;
         btn.onclick = () => checkAnswer(opt, q.jawaban);
@@ -56,19 +78,18 @@ function loadQuestion() {
 }
 
 function checkAnswer(selected, correct) {
-    if (selected === correct) {
-        correctSound.play();
-        currentQuestion++;
-        loadQuestion();
-    } else {
-        wrongSound.play();
-        lives--;
-        updateHearts();
-        if (lives <= 0) {
-            alert("Game Over! Kamu kehabisan nyawa.");
-            window.location.href = "index.html";
-        }
+  if (selected === correct) {
+    correctSound.play();
+    currentQuestion++;
+    loadQuestion();
+  } else {
+    wrongSound.play();
+    lives--;
+    updateHearts();
+    if (lives <= 0) {
+      showGameOverModal();
     }
+  }
 }
 
 function updateHearts() {
@@ -81,18 +102,44 @@ function updateHearts() {
     }
 }
 
+//progress bar
 function updateProgress() {
     const fill = document.getElementById('progress-fill');
     const percent = (currentQuestion / questions.length) * 100;
     fill.style.width = percent + '%';
 }
+// game over modal
+function showGameOverModal() {
+  const gameOverModal = document.getElementById("game-over-modal");
+  gameOverModal.classList.add("show"); // tampilkan modal
+}
+document.getElementById("restart-game").addEventListener("click", function () {
+  window.location.href = "index.html"; // ganti jika ingin arahkan ke halaman berbeda
+});
 
+
+// Game quit
 function quitGame() {
-    const confirmQuit = confirm("Yakin ingin keluar dari permainan?");
-    if (confirmQuit) {
-        window.location.href = "index.html";
-    }
+  document.getElementById("exit-modal").classList.add("show");
 }
 
-// Mulai dari sini
-loadQuestionsFromJSON();
+document.getElementById("confirm-exit").addEventListener("click", function() {
+  window.location.href = "index.html"; // arahkan ke halaman utama, atau ubah sesuai kebutuhan
+});
+
+document.getElementById("cancel-exit").addEventListener("click", function() {
+  document.getElementById("exit-modal").classList.remove("show");
+});
+
+
+function showLevelUpModal(level) {
+    levelUpTitle.textContent = "Selamat!";
+    levelUpMessage.textContent = `Kamu telah menyelesaikan level dan naik ke level "${level.toUpperCase()}".`;
+    levelUpModal.style.display = "block";
+}
+
+// Mulai game
+(async () => {
+    await loadQuestionsFromJSON();
+    loadQuestion();
+})();
