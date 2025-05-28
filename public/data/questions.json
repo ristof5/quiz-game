@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa yang sebaiknya tidak kamu bagikan di media sosial?",
+    "opsi": ["Nomor telepon pribadi", "Foto makanan", "Tempat wisata", "Hobi"],
+    "jawaban": "Nomor telepon pribadi"
+  },
+  {
+    "id": 2,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Mengapa penting untuk menggunakan password yang kuat?",
+    "opsi": ["Agar lebih cepat login", "Agar mudah diingat teman", "Untuk menjaga keamanan akun", "Supaya bisa dibagikan"],
+    "jawaban": "Untuk menjaga keamanan akun"
+  },
+  {
+    "id": 3,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Contoh informasi pribadi yang harus dijaga adalah...",
+    "opsi": ["Alamat rumah", "Warna favorit", "Film favorit", "Makanan kesukaan"],
+    "jawaban": "Alamat rumah"
+  },
+  {
+    "id": 4,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa itu dua faktor autentikasi (2FA)?",
+    "opsi": ["Kata sandi dua kali", "Sistem login menggunakan dua langkah", "Menggunakan dua akun", "Login dua orang sekaligus"],
+    "jawaban": "Sistem login menggunakan dua langkah"
+  },
+  {
+    "id": 5,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa yang harus kamu lakukan jika menerima email mencurigakan?",
+    "opsi": ["Klik saja semua link", "Beri tahu teman", "Abaikan dan laporkan sebagai spam", "Balas emailnya"],
+    "jawaban": "Abaikan dan laporkan sebagai spam"
+  },
+  {
+    "id": 6,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Informasi apa yang boleh dibagikan secara publik?",
+    "opsi": ["Tanggal lahir", "Nama hewan peliharaan", "Nomor KTP", "Kata sandi"],
+    "jawaban": "Nama hewan peliharaan"
+  },
+  {
+    "id": 7,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa risiko menggunakan Wi-Fi publik tanpa VPN?",
+    "opsi": ["Koneksi lambat", "Bisa dimonitor orang lain", "Akun menjadi premium", "Internet gratis selamanya"],
+    "jawaban": "Bisa dimonitor orang lain"
+  },
+  {
+    "id": 8,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Kenapa penting logout dari akun setelah menggunakan komputer umum?",
+    "opsi": ["Agar komputer tidak hang", "Agar hemat listrik", "Untuk menjaga keamanan akun", "Supaya bisa cepat login kembali"],
+    "jawaban": "Untuk menjaga keamanan akun"
+  },
+  {
+    "id": 9,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa arti ikon gembok di browser saat membuka situs web?",
+    "opsi": ["Situs sedang diupdate", "Koneksi terenkripsi dan aman", "Situs tidak tersedia", "Akun sedang logout"],
+    "jawaban": "Koneksi terenkripsi dan aman"
+  },
+  {
+    "id": 10,
+    "kategori": "privasi",
+    "tingkat": "mudah",
+    "pertanyaan": "Kapan kamu boleh membagikan kata sandi ke orang lain?",
+    "opsi": ["Jika diminta guru", "Jika diminta teman", "Tidak pernah", "Kalau lupa sandi sendiri"],
+    "jawaban": "Tidak pernah"
+  },
+  {
+    "id": 11,
+    "kategori": "privasi",
+    "tingkat": "menengah",
+    "pertanyaan": "Apa yang bisa terjadi jika seseorang mengetahui jawabannya atas pertanyaan pemulihan akunmu (misalnya: nama hewan peliharaan)?",
+    "opsi": [
+      "Mereka bisa mengirim pesan ke temanmu",
+      "Mereka bisa meretas akunmu",
+      "Mereka bisa mengubah warnamu di profil",
+      "Mereka hanya bisa melihat postinganmu"
+    ],
+    "jawaban": "Mereka bisa meretas akunmu"
+  },
+  {
+    "id": 12,
+    "kategori": "privasi",
+    "tingkat": "menengah",
+    "pertanyaan": "Mengapa aplikasi sering meminta izin akses ke kamera, mikrofon, atau lokasi?",
+    "opsi": [
+      "Agar aplikasi berjalan lebih cepat",
+      "Untuk meningkatkan pengalaman pengguna, tapi bisa disalahgunakan jika tidak hati-hati",
+      "Agar bisa mempercepat download",
+      "Untuk menambahkan efek animasi"
+    ],
+    "jawaban": "Untuk meningkatkan pengalaman pengguna, tapi bisa disalahgunakan jika tidak hati-hati"
+  },
+  {
+    "id": 13,
+    "kategori": "privasi",
+    "tingkat": "menengah",
+    "pertanyaan": "Apa langkah terbaik jika kamu menerima pesan yang meminta data pribadi secara tiba-tiba?",
+    "opsi": [
+      "Langsung dikirimkan agar cepat selesai",
+      "Abaikan dan laporkan sebagai penipuan",
+      "Tanya di grup keluarga",
+      "Screenshot lalu hapus"
+    ],
+    "jawaban": "Abaikan dan laporkan sebagai penipuan"
+  },
+  {
+    "id": 14,
+    "kategori": "privasi",
+    "tingkat": "menengah",
+    "pertanyaan": "Salah satu ciri aplikasi yang berpotensi berbahaya terhadap privasi adalah...",
+    "opsi": [
+      "Ukuran file kecil",
+      "Tidak tersedia di toko aplikasi resmi",
+      "Terlalu banyak gambar",
+      "Desainnya sederhana"
+    ],
+    "jawaban": "Tidak tersedia di toko aplikasi resmi"
+  },
+  {
+    "id": 15,
+    "kategori": "privasi",
+    "tingkat": "menengah",
+    "pertanyaan": "Mengapa kita harus sering mengganti kata sandi secara berkala?",
+    "opsi": [
+      "Agar tidak bosan dengan kata sandi lama",
+      "Untuk menghindari kebocoran data yang tidak terdeteksi",
+      "Karena aplikasi memintanya",
+      "Untuk menjaga estetika akun"
+    ],
+    "jawaban": "Untuk menghindari kebocoran data yang tidak terdeteksi"
+  },
+  
+  {
+    "id": 16,
+    "kategori": "privasi",
+    "tingkat": "sulit",
+    "pertanyaan": "Apa itu phishing dan bagaimana cara menghindarinya?",
+    "opsi": [
+      "Usaha meretas akun dengan menebak sandi, hindari dengan tidak membuat akun",
+      "Upaya pencurian data melalui tautan palsu, hindari dengan tidak mengklik tautan mencurigakan",
+      "Aplikasi untuk memantau lokasi, hindari dengan matikan GPS",
+      "Alat untuk memblokir iklan, hindari dengan tidak menginstal"
+    ],
+    "jawaban": "Upaya pencurian data melalui tautan palsu, hindari dengan tidak mengklik tautan mencurigakan"
+  },
+  {
+    "id": 17,
+    "kategori": "privasi",
+    "tingkat": "sulit",
+    "pertanyaan": "Mengapa penggunaan Wi-Fi publik tanpa VPN berisiko terhadap privasi data?",
+    "opsi": [
+      "Karena Wi-Fi publik lambat",
+      "Karena siapa pun bisa melihat aktivitas online kita tanpa enkripsi",
+      "Karena tidak bisa digunakan di semua aplikasi",
+      "Karena memakan lebih banyak baterai"
+    ],
+    "jawaban": "Karena siapa pun bisa melihat aktivitas online kita tanpa enkripsi"
+  },
+  {
+    "id": 18,
+    "kategori": "privasi",
+    "tingkat": "sulit",
+    "pertanyaan": "Apa keuntungan utama mengaktifkan autentikasi dua faktor (2FA)?",
+    "opsi": [
+      "Mempercepat login",
+      "Mengurangi jumlah spam",
+      "Menambah lapisan keamanan dengan kode tambahan",
+      "Memungkinkan login otomatis"
+    ],
+    "jawaban": "Menambah lapisan keamanan dengan kode tambahan"
+  },
+  {
+    "id": 19,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa yang sebaiknya kamu lakukan jika melihat temanmu dirundung di media sosial?",
+    "opsi": [
+      "Ikut membalas dengan komentar",
+      "Diam saja karena bukan urusanmu",
+      "Membela temanmu dengan sopan dan melapor",
+      "Menghapus akunmu"
+    ],
+    "jawaban": "Membela temanmu dengan sopan dan melapor"
+  },
+  {
+    "id": 20,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa itu cyberbullying?",
+    "opsi": [
+      "Permainan online bersama",
+      "Mengirim pesan lucu ke teman",
+      "Mengganggu orang lain secara online",
+      "Menggunakan emoji yang salah"
+    ],
+    "jawaban": "Mengganggu orang lain secara online"
+  },
+  {
+    "id": 21,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Mengapa cyberbullying itu salah?",
+    "opsi": [
+      "Karena membuat orang merasa senang",
+      "Karena bisa merusak perasaan dan mental orang lain",
+      "Karena bisa membuat akun jadi terkenal",
+      "Karena bisa membuat game jadi seru"
+    ],
+    "jawaban": "Karena bisa merusak perasaan dan mental orang lain"
+  },
+  {
+    "id": 22,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Jika kamu menerima pesan kasar dari orang tidak dikenal, apa yang harus kamu lakukan?",
+    "opsi": [
+      "Membalas dengan lebih kasar",
+      "Mengabaikan dan melaporkannya",
+      "Menyebarkannya ke teman-teman",
+      "Menanyakan siapa dia"
+    ],
+    "jawaban": "Mengabaikan dan melaporkannya"
+  },
+  {
+    "id": 23,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Siapa yang bisa kamu ajak bicara jika merasa di-bully secara online?",
+    "opsi": [
+      "Teman sebaya saja",
+      "Orang dewasa yang dipercaya seperti guru atau orang tua",
+      "Akun palsu di internet",
+      "Tidak usah cerita ke siapa pun"
+    ],
+    "jawaban": "Orang dewasa yang dipercaya seperti guru atau orang tua"
+  },
+  {
+    "id": 24,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Apakah menyebarkan rumor atau foto orang lain tanpa izin termasuk perundungan?",
+    "opsi": [
+      "Tidak, karena hanya bercanda",
+      "Ya, itu bentuk perundungan digital",
+      "Hanya jika banyak orang yang melihat",
+      "Tidak, jika orang tersebut terkenal"
+    ],
+    "jawaban": "Ya, itu bentuk perundungan digital"
+  },
+  {
+    "id": 25,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Mengapa penting untuk menghormati orang lain di dunia maya?",
+    "opsi": [
+      "Agar kita bisa bermain lebih banyak game",
+      "Agar tidak diblokir",
+      "Agar tercipta lingkungan online yang aman dan nyaman",
+      "Agar lebih banyak pengikut"
+    ],
+    "jawaban": "Agar tercipta lingkungan online yang aman dan nyaman"
+  },
+  {
+    "id": 26,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa tindakan pertama saat mengalami cyberbullying?",
+    "opsi": [
+      "Mematikan perangkat",
+      "Menyimpan bukti dan melaporkan",
+      "Menghapus akun selamanya",
+      "Menonaktifkan Wi-Fi"
+    ],
+    "jawaban": "Menyimpan bukti dan melaporkan"
+  },
+  {
+    "id": 27,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa arti empati saat berinteraksi online?",
+    "opsi": [
+      "Berpura-pura baik",
+      "Berbagi semua informasi pribadi",
+      "Berusaha memahami perasaan orang lain",
+      "Meminta semua orang untuk diam"
+    ],
+    "jawaban": "Berusaha memahami perasaan orang lain"
+  },
+  {
+    "id": 28,
+    "kategori": "perundungan",
+    "tingkat": "mudah",
+    "pertanyaan": "Apa sebaiknya yang tidak kamu lakukan saat tidak setuju dengan komentar orang di media sosial?",
+    "opsi": [
+      "Menyerang balik dengan kata kasar",
+      "Memberikan pendapat dengan sopan",
+      "Mengabaikannya",
+      "Melaporkannya jika mengganggu"
+    ],
+    "jawaban": "Menyerang balik dengan kata kasar"
+  },
+  {
+    "id": 29,
+    "kategori": "perundungan",
+    "tingkat": "menengah",
+    "pertanyaan": "Bagaimana cara yang tepat untuk membantu teman yang menjadi korban cyberbullying?",
+    "opsi": [
+      "Menyuruhnya melawan pelaku dengan kata kasar",
+      "Mengabaikannya agar tidak terlibat",
+      "Mendukungnya, menyimpan bukti, dan bantu laporkan",
+      "Mengunggah ulang postingan pelaku agar ramai"
+    ],
+    "jawaban": "Mendukungnya, menyimpan bukti, dan bantu laporkan"
+  },
+  {
+    "id": 30,
+    "kategori": "perundungan",
+    "tingkat": "menengah",
+    "pertanyaan": "Apa yang bisa terjadi jika kita diam saja melihat perundungan digital?",
+    "opsi": [
+      "Perundungan bisa berhenti sendiri",
+      "Korban bisa merasa sendirian dan makin tertekan",
+      "Pelaku akan menjadi lebih ramah",
+      "Itu akan membuat kita terlihat netral"
+    ],
+    "jawaban": "Korban bisa merasa sendirian dan makin tertekan"
+  },
+  {
+    "id": 31,
+    "kategori": "perundungan",
+    "tingkat": "menengah",
+    "pertanyaan": "Mengapa penting untuk menyimpan bukti saat mengalami cyberbullying?",
+    "opsi": [
+      "Untuk menyebarkannya kembali",
+      "Sebagai bahan lelucon",
+      "Sebagai bukti saat melapor ke pihak berwenang",
+      "Untuk membalas dendam di kemudian hari"
+    ],
+    "jawaban": "Sebagai bukti saat melapor ke pihak berwenang"
+  },
+  {
+    "id": 32,
+    "kategori": "perundungan",
+    "tingkat": "menengah",
+    "pertanyaan": "Apa yang harus kamu lakukan jika orang yang melakukan perundungan adalah teman dekatmu?",
+    "opsi": [
+      "Diam saja karena dia teman",
+      "Menyetujui perbuatannya agar tidak dijauhi",
+      "Memberi tahu bahwa tindakannya salah dan tidak mendukungnya",
+      "Ikut serta agar tidak menjadi korban"
+    ],
+    "jawaban": "Memberi tahu bahwa tindakannya salah dan tidak mendukungnya"
+  },
+  {
+    "id": 33,
+    "kategori": "perundungan",
+    "tingkat": "menengah",
+    "pertanyaan": "Platform media sosial biasanya menyediakan fitur berikut untuk menghadapi perundungan, kecuali:",
+    "opsi": [
+      "Blokir akun",
+      "Laporkan konten",
+      "Simpan bukti",
+      "Mempermalukan pelaku di publik"
+    ],
+    "jawaban": "Mempermalukan pelaku di publik"
+  },
+  {
+    "id": 34,
+    "kategori": "perundungan",
+    "tingkat": "sulit",
+    "pertanyaan": "Seorang teman menjadi korban doxing (penyebaran data pribadi secara publik). Apa langkah terbaik yang bisa kamu lakukan untuk membantunya?",
+    "opsi": [
+      "Sebarkan informasi itu ke lebih banyak orang agar viral",
+      "Diam dan tidak ikut campur",
+      "Bantu melaporkan ke platform dan sarankan untuk menghubungi pihak berwenang",
+      "Komentari unggahan itu agar tahu lebih banyak"
+    ],
+    "jawaban": "Bantu melaporkan ke platform dan sarankan untuk menghubungi pihak berwenang"
+  },
+  {
+    "id": 35,
+    "kategori": "perundungan",
+    "tingkat": "sulit",
+    "pertanyaan": "Apa dampak jangka panjang dari perundungan digital terhadap anak dan remaja?",
+    "opsi": [
+      "Semua orang akan melupakannya",
+      "Meningkatkan rasa humor",
+      "Bisa menyebabkan trauma, isolasi sosial, dan gangguan mental",
+      "Membuatnya jadi lebih terkenal di media sosial"
+    ],
+    "jawaban": "Bisa menyebabkan trauma, isolasi sosial, dan gangguan mental"
+  },
+  {
+    "id": 36,
+    "kategori": "perundungan",
+    "tingkat": "sulit",
+    "pertanyaan": "Mengapa penting untuk tidak membalas perundungan dengan tindakan serupa?",
+    "opsi": [
+      "Agar pelaku sadar kita bisa melawan",
+      "Supaya balas dendam terasa adil",
+      "Karena membalas perundungan bisa membuat kita juga melanggar aturan dan hukum",
+      "Agar kita terlihat kuat di depan orang lain"
+    ],
+    "jawaban": "Karena membalas perundungan bisa membuat kita juga melanggar aturan dan hukum"
+  }
+
+]
