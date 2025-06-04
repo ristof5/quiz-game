@@ -384,6 +384,7 @@ button:hover {
   max-width: 400px;
   width: 90%;
   animation: fadeInUp 0.3s ease-in-out;
+  text-shadow: none;
 }
 
 #game-over-modal .modal-content {
