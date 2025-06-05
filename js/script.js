@@ -53,10 +53,12 @@ function loadQuestion() {
         const nextIndex = levels.indexOf(currentLevel) + 1;
         if (nextIndex < levels.length) {
             currentLevel = levels[nextIndex];
-            lives = Math.min(lives + 1, 5); // Tambah 1 nyawa
-            showLevelUpModal(currentLevel); // Tampilkan pop-up
+            lives = Math.min(lives + 1, 5); // Tambah 1 nyawa saat naik level
+            showLevelUpModal(currentLevel);
             loadQuestionsFromJSON();
         } else {
+            // Semua level sudah selesai: anggap quiz sukses total
+            sessionStorage.setItem('quizFinished', 'true'); // 🔐 Tambahkan ini
             winSound.play();
             window.location.href = "badge.html";
         }
