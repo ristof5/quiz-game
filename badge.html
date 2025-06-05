@@ -4,8 +4,20 @@
   <meta charset="UTF-8">
   <title>Pahlawan Data!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+  <script>
+  const quizStatus = sessionStorage.getItem("quizFinished");
+  if (quizStatus !== "true") {
+    // Jika belum menyelesaikan quiz, redirect ke index.html
+    window.location.href = "index.html";
+  } else {
+    // Opsional: Hapus flag agar user tidak bisa refresh langsung ke sini lagi
+    sessionStorage.removeItem("quizFinished");
+  }
+</script>
+
   <div class="container">
     <img src="assets/images/background.jpg" class="bg" alt="Pixel Background">
 
