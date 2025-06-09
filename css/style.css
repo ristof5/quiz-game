@@ -1,637 +1,2109 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  height: 100%;
-  font-family: 'Press Start 2P', cursive;
-  background-color: #000;
-  overflow: hidden;
-  color: #fff;
-}
-
-/* Container Umum */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 2rem;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-/* Background Image */
-.bg {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-}
-
-/* Overlay Title */
-.title {
-  font-size: 2rem;
-  color: yellow;
-  margin-bottom: 2rem;
-  animation: pulse 1.5s infinite;
-  text-shadow: 2px 2px #000;
-}
-
-/* Animasi Judul */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* Tombol Menu */
-.menu-buttons button {
-  font-family: inherit;
-  font-size: 0.75rem;
-  margin: 1rem;
-  padding: 1rem 1.5rem;
-  background-color: #c0c0c0;
-  border: 4px solid #333;
-  box-shadow: 4px 4px #111;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.menu-buttons button:hover {
-  background-color: #ffe600;
-  color: #000;
-  transform: scale(1.05);
-}
-
-/* Progress Bar */
-#progress-bar {
-  width: 80%;
-  height: 20px;
-  background: #222;
-  border: 2px solid #fff;
-  border-radius: 10px;
-  margin: 2rem auto;
-  overflow: hidden;
-}
-
-#progress-fill {
-  width: 0%;
-  height: 100%;
-  background: limegreen;
-  transition: width 0.3s ease;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  background: #fff;
-  color: #000;
-  padding: 2rem;
-  width: 80%;
-  max-width: 500px;
-  border: 6px double #333;
-  text-align: center;
-  font-size: 0.6rem;
-  animation: fadeInUp 0.4s ease-out;
-}
-
-/* Modal khusus untuk #rulesModal */
-#rulesModal .modal-content {
-  max-width: 900px;
-  text-align: left;
-}
-
-#levelUpModal .modal-content {
-  max-width: 600px;
-  text-align: center;
-  color: #222;
-  border-radius: 18px;
-  text-decoration: none;
-  text-shadow: none;
-}
-
-#game-over-modal .modal-content {
-  text-decoration: none;
-  text-shadow: none;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.modal-content button {
-  font-family: inherit;
-  font-size: 0.7rem;
-  padding: 0.6rem 1.2rem;
-  margin-top: 1rem;
-  background-color: #333;
-  color: #fff;
-  border: 2px solid #fff;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.modal-content button:hover {
-  background-color: #ffe600;
-  color: #000;
-}
-
-/* Quiz Box */
-#quiz-box {
-  background: rgba(255,255,255,0.1);
-  padding: 1.5rem;
-  border: 4px dashed #fff;
-  border-radius: 12px;
-  margin: 2rem auto;
-  max-width: 1500px;
-  color: #fff;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
-}
-
-#question {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-#question-text {
-  font-size: 0.7rem;
-  background: rgba(30, 30, 30, 0.7);
-  padding: 1.1rem 1.2rem;
-  border-radius: 10px;
-  margin-bottom: 1.2rem;
-  color: #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-/* Tombol Jawaban */
-#answer-buttons button {
-  display: block;
-  width: 100%;
-  margin: 10px auto;
-  padding: 0.75rem;
-  font-size: 0.6rem;
-  background: #000;
-  color: #0f0;
-  border: 3px solid #0f0;
-  text-align: center;
-  transition: background 0.3s;
-}
-
-#answer-buttons button:hover {
-  background: #0f0;
-  color: #000;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  /* Container Umum */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  /* Background Image */
+  .bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Overlay Title */
   .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s infinite;
+    text-shadow: 2px 2px #000;
   }
-
+  
+  /* Animasi Judul */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Tombol Menu */
   .menu-buttons button {
-    font-size: 0.6rem;
-    padding: 0.8rem 1.2rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #c0c0c0;
+    border: 4px solid #333;
+    box-shadow: 4px 4px #111;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
   }
-
-  .modal-content {
-    font-size: 0.5rem;
-    width: 90%;
-  }
-
-  #question {
-    font-size: 0.65rem;
-  }
-
-  #question-text {
-    font-size: 0.5rem;
-  }
-
-  #answer-buttons button {
-    font-size: 0.5rem;
-    padding: 0.6rem;
-  }
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  margin: 0;
-  height: 100%;
-  font-family: 'Press Start 2P', cursive;
-  background-color: #000;
-  overflow: hidden;
-}
-
-body, .container {
-  position: relative;
-}
-
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.bg {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  z-index: 1;
-}
-
-.overlay {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-top: 10%;
-  color: #fff;
-  text-shadow: 2px 2px #000;
-}
-
-.title {
-  font-size: 3rem;
-  color: yellow;
-  margin-bottom: 2rem;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
+  
+  .menu-buttons button:hover {
+    background-color: #ffe600;
+    color: #000;
     transform: scale(1.05);
   }
-
-  100% {
-    transform: scale(1);
+  
+  /* Progress Bar */
+  #progress-bar {
+    width: 80%;
+    height: 20px;
+    background: #222;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 2rem auto;
+    overflow: hidden;
   }
-}
-
-.menu-buttons {
-  margin-top: 2rem;
-}
-
-button {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1rem;
-  margin: 1rem;
-  padding: 1rem 2rem;
-  background-color: #c0c0c0;
-  border: 4px solid #444;
-  box-shadow: 4px 4px #222;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-button:hover {
-  background-color: #ffe600;
-  color: #000;
-  transform: scale(1.05);
-}
-
-.hearts {
-  margin-bottom: 2rem;
-}
-
-.hearts img {
-  width: 60px;
-  margin: 0 3px;
-}
-
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  /* Lebih tinggi dari elemen lain */
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 2rem;
-  border: 6px solid #333;
-  width: 70%;
-  color: #000;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-}
-
-#exit-modal .modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  max-width: 400px;
-  width: 90%;
-  animation: fadeInUp 0.3s ease-in-out;
-  text-shadow: none;
-}
-
-#game-over-modal .modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.3s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    transition: width 0.3s ease;
   }
-
-  to {
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: #fff;
+    color: #000;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    border: 6px double #333;
+    text-align: center;
+    font-size: 0.6rem;
+    animation: fadeInUp 0.4s ease-out;
+  }
+  
+  /* Modal khusus untuk #rulesModal */
+  #rulesModal .modal-content {
+    max-width: 900px;
+    text-align: left;
+  }
+  
+  #levelUpModal .modal-content {
+    max-width: 600px;
+    text-align: center;
+    color: #222;
+    border-radius: 18px;
+    text-decoration: none;
+    text-shadow: none;
+  }
+  
+  #game-over-modal .modal-content {
+    text-decoration: none;
+    text-shadow: none;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content button {
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #ffe600;
+    color: #000;
+  }
+  
+  /* Quiz Box */
+  #quiz-box {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border: 4px dashed #fff;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1500px;
+    color: #fff;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+  
+  #question {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #question-text {
+    font-size: 0.7rem;
+    background: rgba(30, 30, 30, 0.7);
+    padding: 1.1rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  /* Tombol Jawaban */
+  #answer-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0.75rem;
+    font-size: 0.6rem;
+    background: #000;
+    color: #0f0;
+    border: 3px solid #0f0;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  #answer-buttons button:hover {
+    background: #0f0;
+    color: #000;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .menu-buttons button {
+      font-size: 0.6rem;
+      padding: 0.8rem 1.2rem;
+    }
+  
+    .modal-content {
+      font-size: 0.5rem;
+      width: 90%;
+    }
+  
+    #question {
+      font-size: 0.65rem;
+    }
+  
+    #question-text {
+      font-size: 0.5rem;
+    }
+  
+    #answer-buttons button {
+      font-size: 0.5rem;
+      padding: 0.6rem;
+    }
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  body, .container {
+    position: relative;
+  }
+  
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .bot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1000;
+    animation: fadeIn 0.7s ease-out;
+  }
+  
+  /* Avatar Bot */
+  .bot-avatar {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+    margin-right: 14px;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    background: #f4f4f4;
+    border: 1.5px solid #bbb;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
+  
+  /* Bubble Pesan */
+  .bot-bubble {
+    background-color: #f7f7fa;
+    border: 1.5px solid #bbb;
+    border-radius: 16px 16px 16px 6px;
+    padding: 16px 20px;
+    font-size: 16px;
+    max-width: 320px;
+    line-height: 1.6;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #222;
+    word-break: break-word;
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
   }
-}
-
-.modal-content h2 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.modal-content ul {
-  list-style-type: square;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.modal-content p {
-  font-size: 0.75rem;
-  color: #444;
-}
-
-.modal-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-/* Modal Buttons */
-.modal-content button {
-  padding: 0.6rem 1.2rem;
-  margin: 0 0.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-
-#confirm-exit {
-  background-color: #d33;
-  color: white;
-}
-
-#cancel-exit {
-  background-color: #ccc;
-  color: #333;
-}
-
-.modal-content button:hover {
-  opacity: 0.9;
-}
-
-.hidden {
-  display: none;
-}
-
-.close {
-  color: #000;
-  float: right;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.5rem;
-  }
-
-  button {
-    font-size: 0.7rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .modal-content {
-    width: 90%;
-    font-size: 0.7rem;
-  }
-}
-
-.center {
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-}
-
-.badge {
-  width: 220px;
-  margin: 40px;
-  animation: pop 0.8s ease-in-out;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(0);
+  
+  /* Bubble saat kosong (hidden text) */
+  .bot-bubble.hidden {
     opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
   }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
+  
+  /* Fade-in awal container */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
-
-#progress-bar {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 9999;
-  /* penting */
-}
-
-#progress-fill {
-  width: 0%;
-  height: 100%;
-  background: limegreen;
-  transition: width 0.3s ease;
-}
-
-.quit-btn {
-  background: #ff4444;
-  color: #fff;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
+  
+  
+  .bg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
   }
-
-  #quiz-box h2 {
-    font-size: 1.2rem;
-  }
-
-  /*#quiz-box {
-    background: #ffffffcc;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }*/
-
-  #question {
-    font-size: 1.2rem;
-    margin-bottom: 16px;
-  }
-
-  #question-text {
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 24px;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px;
-    border-radius: 8px;
-  }
-
-  #answer-buttons button {
-    display: block;
-    width: 90%;
-    max-width: 500px;
-    margin: 8px auto;
-    padding: 10px 12px;
-    font-size: 12px;
-    background-color: #333;
+  
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
     color: #fff;
-    border: 2px solid #fff;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.05);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .menu-buttons {
+    margin-top: 2rem;
+  }
+  
+  button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: #c0c0c0;
+    border: 4px solid #444;
+    box-shadow: 4px 4px #222;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #ffe600;
+    color: #000;
+    transform: scale(1.05);
+  }
+  
+  .hearts {
+    margin-bottom: 2rem;
+  }
+  
+  .hearts img {
+    width: 60px;
+    margin: 0 3px;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    /* Lebih tinggi dari elemen lain */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 6px solid #333;
+    width: 70%;
+    color: #000;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  
+  #exit-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeInUp 0.3s ease-in-out;
+    text-shadow: none;
+  }
+  
+  #game-over-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content ul {
+    list-style-type: square;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content p {
+    font-size: 0.75rem;
+    color: #444;
+  }
+  
+  .modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Modal Buttons */
+  .modal-content button {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    transition: 0.2s;
   }
-
-  #answer-buttons button {
-    display: block;
-    width: 90%;
-    max-width: 500px;
-    margin: 8px auto;
-    padding: 10px 12px;
-    font-size: 12px;
-    background-color: #333;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 8px;
+  
+  
+  #confirm-exit {
+    background-color: #d33;
+    color: white;
+  }
+  
+  #cancel-exit {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .modal-content button:hover {
+    opacity: 0.9;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .close {
+    color: #000;
+    float: right;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
   }
-
-  #answer-buttons button:hover {
-    background-color: #555;
-  }
-
+  
   @media (max-width: 600px) {
-    #question-text {
-      font-size: 12px;
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .modal-content {
+      width: 90%;
+      font-size: 0.7rem;
+    }
+  }
+  
+  .center {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .badge {
+    width: 220px;
+    margin: 40px;
+    animation: pop 0.8s ease-in-out;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  #progress-bar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9999;
+    /* penting */
+  }
+  
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    transition: width 0.3s ease;
+  }
+  
+  .quit-btn {
+    background: #ff4444;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
       padding: 10px;
     }
-
+  
+    #quiz-box h2 {
+      font-size: 1.2rem;
+    }
+  
+    /*#quiz-box {
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }*/
+  
+    #question {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+  
+    #question-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 8px;
+    }
+  
     #answer-buttons button {
-      font-size: 10px;
-      padding: 8px;
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 8px auto;
+      padding: 10px 12px;
+      font-size: 12px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    #answer-buttons button {
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 8px auto;
+      padding: 10px 12px;
+      font-size: 12px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    #answer-buttons button:hover {
+      background-color: #555;
+    }
+  
+    @media (max-width: 600px) {
+      #question-text {
+        font-size: 12px;
+        padding: 10px;
+      }
+  
+      #answer-buttons button {
+        font-size: 10px;
+        padding: 8px;
+      }
+    }
+  
+    .option {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    #exit-btn {
+      font-size: 1rem;
+      margin-top: 1rem;
     }
   }
+}
 
-  .option {
-    font-size: 1rem;
-    padding: 10px;
+@media (min-width: 769px) and (max-width: 1024px) {
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-
-  #exit-btn {
-    font-size: 1rem;
+  
+  body, html {
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  /* Container Umum */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  /* Background Image */
+  .bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Overlay Title */
+  .title {
+    font-size: 2rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s infinite;
+    text-shadow: 2px 2px #000;
+  }
+  
+  /* Animasi Judul */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Tombol Menu */
+  .menu-buttons button {
+    font-family: inherit;
+    font-size: 0.75rem;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #c0c0c0;
+    border: 4px solid #333;
+    box-shadow: 4px 4px #111;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .menu-buttons button:hover {
+    background-color: #ffe600;
+    color: #000;
+    transform: scale(1.05);
+  }
+  
+  /* Progress Bar */
+  #progress-bar {
+    width: 80%;
+    height: 20px;
+    background: #222;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+  
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    transition: width 0.3s ease;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: #fff;
+    color: #000;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    border: 6px double #333;
+    text-align: center;
+    font-size: 0.6rem;
+    animation: fadeInUp 0.4s ease-out;
+  }
+  
+  /* Modal khusus untuk #rulesModal */
+  #rulesModal .modal-content {
+    max-width: 900px;
+    text-align: left;
+  }
+  
+  #levelUpModal .modal-content {
+    max-width: 600px;
+    text-align: center;
+    color: #222;
+    border-radius: 18px;
+    text-decoration: none;
+    text-shadow: none;
+  }
+  
+  #game-over-modal .modal-content {
+    text-decoration: none;
+    text-shadow: none;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content button {
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 0.6rem 1.2rem;
     margin-top: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #ffe600;
+    color: #000;
+  }
+  
+  /* Quiz Box */
+  #quiz-box {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border: 4px dashed #fff;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1500px;
+    color: #fff;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+  
+  #question {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #question-text {
+    font-size: 0.7rem;
+    background: rgba(30, 30, 30, 0.7);
+    padding: 1.1rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  /* Tombol Jawaban */
+  #answer-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0.75rem;
+    font-size: 0.6rem;
+    background: #000;
+    color: #0f0;
+    border: 3px solid #0f0;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  #answer-buttons button:hover {
+    background: #0f0;
+    color: #000;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .menu-buttons button {
+      font-size: 0.6rem;
+      padding: 0.8rem 1.2rem;
+    }
+  
+    .modal-content {
+      font-size: 0.5rem;
+      width: 90%;
+    }
+  
+    #question {
+      font-size: 0.65rem;
+    }
+  
+    #question-text {
+      font-size: 0.5rem;
+    }
+  
+    #answer-buttons button {
+      font-size: 0.5rem;
+      padding: 0.6rem;
+    }
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  body, .container {
+    position: relative;
+  }
+  
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .bot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1000;
+    animation: fadeIn 0.7s ease-out;
+  }
+  
+  /* Avatar Bot */
+  .bot-avatar {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+    margin-right: 14px;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    background: #f4f4f4;
+    border: 1.5px solid #bbb;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
+  
+  /* Bubble Pesan */
+  .bot-bubble {
+    background-color: #f7f7fa;
+    border: 1.5px solid #bbb;
+    border-radius: 16px 16px 16px 6px;
+    padding: 16px 20px;
+    font-size: 16px;
+    max-width: 320px;
+    line-height: 1.6;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #222;
+    word-break: break-word;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
+  }
+  
+  /* Bubble saat kosong (hidden text) */
+  .bot-bubble.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+  }
+  
+  /* Fade-in awal container */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .bg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.05);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .menu-buttons {
+    margin-top: 2rem;
+  }
+  
+  button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: #c0c0c0;
+    border: 4px solid #444;
+    box-shadow: 4px 4px #222;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #ffe600;
+    color: #000;
+    transform: scale(1.05);
+  }
+  
+  .hearts {
+    margin-bottom: 2rem;
+  }
+  
+  .hearts img {
+    width: 60px;
+    margin: 0 3px;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    /* Lebih tinggi dari elemen lain */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 6px solid #333;
+    width: 70%;
+    color: #000;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  
+  #exit-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeInUp 0.3s ease-in-out;
+    text-shadow: none;
+  }
+  
+  #game-over-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content ul {
+    list-style-type: square;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content p {
+    font-size: 0.75rem;
+    color: #444;
+  }
+  
+  .modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Modal Buttons */
+  .modal-content button {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  
+  #confirm-exit {
+    background-color: #d33;
+    color: white;
+  }
+  
+  #cancel-exit {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .modal-content button:hover {
+    opacity: 0.9;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .close {
+    color: #000;
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .modal-content {
+      width: 90%;
+      font-size: 0.7rem;
+    }
+  }
+  
+  .center {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .badge {
+    width: 220px;
+    margin: 40px;
+    animation: pop 0.8s ease-in-out;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  #progress-bar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9999;
+    /* penting */
+  }
+  
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    transition: width 0.3s ease;
+  }
+  
+  .quit-btn {
+    background: #ff4444;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    #quiz-box h2 {
+      font-size: 1.2rem;
+    }
+  
+    /*#quiz-box {
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }*/
+  
+    #question {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+  
+    #question-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 8px;
+    }
+  
+    #answer-buttons button {
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 8px auto;
+      padding: 10px 12px;
+      font-size: 12px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    #answer-buttons button {
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 8px auto;
+      padding: 10px 12px;
+      font-size: 12px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    #answer-buttons button:hover {
+      background-color: #555;
+    }
+  
+    @media (max-width: 600px) {
+      #question-text {
+        font-size: 12px;
+        padding: 10px;
+      }
+  
+      #answer-buttons button {
+        font-size: 10px;
+        padding: 8px;
+      }
+    }
+  
+    .option {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    #exit-btn {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  /* Container Umum */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  /* Background Image */
+  .bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Overlay Title */
+  .title {
+    font-size: 2rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s infinite;
+    text-shadow: 2px 2px #000;
+  }
+  
+  /* Animasi Judul */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Tombol Menu */
+  .menu-buttons button {
+    font-family: inherit;
+    font-size: 0.75rem;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #c0c0c0;
+    border: 4px solid #333;
+    box-shadow: 4px 4px #111;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .menu-buttons button:hover {
+    background-color: #ffe600;
+    color: #000;
+    transform: scale(1.05);
+  }
+  
+  /* Progress Bar */
+  #progress-bar {
+    width: 80%;
+    height: 20px;
+    background: #222;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+  
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    transition: width 0.3s ease;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: #fff;
+    color: #000;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    border: 6px double #333;
+    text-align: center;
+    font-size: 0.6rem;
+    animation: fadeInUp 0.4s ease-out;
+  }
+  
+  /* Modal khusus untuk #rulesModal */
+  #rulesModal .modal-content {
+    max-width: 900px;
+    text-align: left;
+  }
+  
+  #levelUpModal .modal-content {
+    max-width: 600px;
+    text-align: center;
+    color: #222;
+    border-radius: 18px;
+    text-decoration: none;
+    text-shadow: none;
+  }
+  
+  #game-over-modal .modal-content {
+    text-decoration: none;
+    text-shadow: none;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content button {
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #ffe600;
+    color: #000;
+  }
+  
+  /* Quiz Box */
+  #quiz-box {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border: 4px dashed #fff;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1500px;
+    color: #fff;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+  
+  #question {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  #question-text {
+    font-size: 0.7rem;
+    background: rgba(30, 30, 30, 0.7);
+    padding: 1.1rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  /* Tombol Jawaban */
+  #answer-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0.75rem;
+    font-size: 0.6rem;
+    background: #000;
+    color: #0f0;
+    border: 3px solid #0f0;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  #answer-buttons button:hover {
+    background: #0f0;
+    color: #000;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .menu-buttons button {
+      font-size: 0.6rem;
+      padding: 0.8rem 1.2rem;
+    }
+  
+    .modal-content {
+      font-size: 0.5rem;
+      width: 90%;
+    }
+  
+    #question {
+      font-size: 0.65rem;
+    }
+  
+    #question-text {
+      font-size: 0.5rem;
+    }
+  
+    #answer-buttons button {
+      font-size: 0.5rem;
+      padding: 0.6rem;
+    }
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  body, .container {
+    position: relative;
+  }
+  
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .bot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1000;
+    animation: fadeIn 0.7s ease-out;
+  }
+  
+  /* Avatar Bot */
+  .bot-avatar {
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+    margin-right: 14px;
+    image-rendering: pixelated;
+    border-radius: 50%;
+    background: #f4f4f4;
+    border: 1.5px solid #bbb;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
+  
+  /* Bubble Pesan */
+  .bot-bubble {
+    background-color: #f7f7fa;
+    border: 1.5px solid #bbb;
+    border-radius: 16px 16px 16px 6px;
+    padding: 16px 20px;
+    font-size: 16px;
+    max-width: 320px;
+    line-height: 1.6;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #222;
+    word-break: break-word;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
+  }
+  
+  /* Bubble saat kosong (hidden text) */
+  .bot-bubble.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+  }
+  
+  /* Fade-in awal container */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .bg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: yellow;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.05);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .menu-buttons {
+    margin-top: 2rem;
+  }
+  
+  button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: #c0c0c0;
+    border: 4px solid #444;
+    box-shadow: 4px 4px #222;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #ffe600;
+    color: #000;
+    transform: scale(1.05);
+  }
+  
+  .hearts {
+    margin-bottom: 2rem;
+  }
+  
+  .hearts img {
+    width: 60px;
+    margin: 0 3px;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    /* Lebih tinggi dari elemen lain */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 6px solid #333;
+    width: 70%;
+    color: #000;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  
+  #exit-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeInUp 0.3s ease-in-out;
+    text-shadow: none;
+  }
+  
+  #game-over-modal .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content ul {
+    list-style-type: square;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content p {
+    font-size: 0.75rem;
+    color: #444;
+  }
+  
+  .modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Modal Buttons */
+  .modal-content button {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  
+  #confirm-exit {
+    background-color: #d33;
+    color: white;
+  }
+  
+  #cancel-exit {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .modal-content button:hover {
+    opacity: 0.9;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .close {
+    color: #000;
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .modal-content {
+      width: 90%;
+      font-size: 0.7rem;
+    }
+  }
+  
+  .center {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .badge {
+    width: 220px;
+    margin: 40px;
+    animation: pop 0.8s ease-in-out;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  #progress-bar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9999;
+    /* penting */
+  }
+  
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    transition: width 0.3s ease;
+  }
+  
+  .quit-btn {
+    background: #ff4444;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    #quiz-box h2 {
+      font-size: 1.2rem;
+    }
+  
+    /*#quiz-box {
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }*/
+  
+    #question {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+  
+    #question-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 8px;
+    }
+  
+    #answer-buttons button {
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 8px auto;
+      padding: 10px 12px;
+      font-size: 12px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    #answer-buttons button {
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 8px auto;
+      padding: 10px 12px;
+      font-size: 12px;
+      background-color: #333;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  
+    #answer-buttons button:hover {
+      background-color: #555;
+    }
+  
+    @media (max-width: 600px) {
+      #question-text {
+        font-size: 12px;
+        padding: 10px;
+      }
+  
+      #answer-buttons button {
+        font-size: 10px;
+        padding: 8px;
+      }
+    }
+  
+    .option {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    #exit-btn {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
   }
 }
